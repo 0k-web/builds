@@ -5102,6 +5102,7 @@ var ZeroKTransport = class {
 //#region src/Frame.svelte
 var { Controller, config: config$1 } = s;
 var webAsset = (asset) => new URL(asset, document.baseURI).href;
+config$1.prefix = new URL("./web/", document.baseURI).pathname;
 config$1.injectPath = webAsset("https://cdn.statically.io/npm/@mercuryworkshop/scramjet-controller@0.0.9/dist/controller.inject.js");
 config$1.scramjetPath = webAsset("https://cdn.statically.io/npm/@mercuryworkshop/scramjet@2.0.2-alpha/dist/scramjet.js");
 config$1.wasmPath = webAsset("https://cdn.statically.io/npm/@mercuryworkshop/scramjet@2.0.2-alpha/dist/scramjet.wasm");

@@ -1,4 +1,4 @@
-//#region node_modules/.pnpm/@mercuryworkshop+scramjet-controller@0.0.9_patch_hash=4f5495e9a6a2a8299a79330bad2555ebbdf1937e0fb15b3cad1bc8665fa60fd2/node_modules/@mercuryworkshop/scramjet-controller/dist/controller.sw.js
+//#region ../../node_modules/.pnpm/@mercuryworkshop+scramjet-controller@0.0.9_patch_hash=4f5495e9a6a2a8299a79330bad2555ebbdf1937e0fb15b3cad1bc8665fa60fd2/node_modules/@mercuryworkshop/scramjet-controller/dist/controller.sw.js
 var e = { 805(e, t, r) {
 	r.d(t, { C: () => o });
 	class o {

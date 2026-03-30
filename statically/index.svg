@@ -69,10 +69,10 @@ self.WASM = '${t}';`,a=n}return[{body:a,status:200,statusText:`OK`,headers:[[`Co
   <title>${n(e)}${a}</title>
   <style>
     :root {
-      color-scheme: light dark;
       font-family: system-ui, sans-serif;
-      background: Canvas;
-      color: CanvasText;
+      color-scheme: light dark;
+      background: light-dark(#daffec, #00120a);
+      color: light-dark(#003627, #daffec);
     }
     body {
       max-width: 48rem;
@@ -83,10 +83,6 @@ self.WASM = '${t}';`,a=n}return[{body:a,status:200,statusText:`OK`,headers:[[`Co
       margin: 0 0 0.5rem;
       font-size: 1.5rem;
     }
-    p {
-      margin: 0 0 1.5rem;
-      color: color-mix(in oklab, CanvasText 70%, Canvas 30%);
-    }
     ul {
       margin: 0;
       padding-left: 1.25rem;
@@ -95,7 +91,7 @@ self.WASM = '${t}';`,a=n}return[{body:a,status:200,statusText:`OK`,headers:[[`Co
       margin-top: 0.5rem;
     }
     a {
-      color: LinkText;
+      color: light-dark(#006940, #b1ffcd);
     }
   </style>
   <body>
@@ -106,7 +102,7 @@ self.WASM = '${t}';`,a=n}return[{body:a,status:200,statusText:`OK`,headers:[[`Co
       `)}
     </ul>
   </body>
-</html>`},o=W(void 0),s=H(()=>X(o)?.item(0)),c=W(`site`);rn(()=>{X(s)&&G(c,X(s).name.toLowerCase().replace(`.zip`,``).replace(/[^a-z-]/g,``),!0)});let l=async()=>{let e=new sl(new rc(X(s)));try{let t=(await e.getEntries()).filter(e=>!e.directory),n=t.map(e=>e.filename),r=``;if(n.length>0){r=n[0];for(let e=1;e<n.length;e++)for(;r&&n[e].indexOf(r)!=0;)r=r.slice(0,-1)}let o=await caches.open(`0k-site/${X(c)}`),s=[],l=new Set;for(let e of t){let t=`/`+e.filename.slice(r.length).replace(`index.html`,``).replace(`.html`,``),n=new URL(t,`https://${X(c)}.0k`),i=Ca(e.filename),a=await e.getData(new ic(i));if(await o.put(n,new Response(a,{headers:{"content-type":i}})),i==Sa){s.push(n);let e=new URL(`.`,n);for(;l.add(e.href),e.pathname!=`/`;)e=new URL(`..`,e)}}for(let e of l){if(await o.match(e))continue;let t=new URL(e),n=i(t,s);n.length!=0&&await o.put(t,new Response(a(X(c),t,n),{headers:{"content-type":Sa}}))}}finally{await e.close()}};var u=kl(),d=q(u),f=e=>{var n=Dl(),r=q(n);Qr(r);var i=Ut(r,3);Ur(i,``,{},{width:`4rem`});var a=Ut(i,2);A(n),ii(r,()=>X(c),e=>G(c,e)),or(`click`,a,()=>l().then(t.close)),_r(e,n)},p=e=>{var t=Ol(),n=Ut(q(t));A(t),si(n,()=>X(o),e=>G(o,e)),_r(e,t)};wr(d,e=>{X(s)?e(f):e(p,-1)}),A(u),Fr(u,()=>e=>e.showModal()),ar(`toggle`,u,e=>{e.newState==`closed`&&t.close()}),_r(e,u),Ie()}sr([`click`]);var jl=mr(`<option> </option>`),Ml=mr(`<button class="chip svelte-mrn94a"> </button>`),Nl=mr(`<dialog closedby="any" class="svelte-mrn94a"><label class="split svelte-mrn94a"><p>Reroute <code>github.io</code></p> <select class="svelte-mrn94a"></select></label> <div class="split svelte-mrn94a"><p>Local sites</p> <div class="chips svelte-mrn94a"><!> <button class="chip svelte-mrn94a">+</button></div></div></dialog> <!>`,1);function Pl(e,t){Fe(t,!0);let n=W(Mt([])),r=()=>caches.keys().then(e=>G(n,e,!0));r();let i=W(!1),a=()=>ha(localStorage[Oa],`statically`),o=e=>{localStorage[Oa]=ha(e,`statically`)};var s=Nl(),c=Ht(s),l=q(c),u=Ut(q(l),2);kr(u,21,()=>ma,Tr,(e,t)=>{var n=jl(),r=q(n,!0);A(n);var i={};un(()=>{vr(r,X(t).label),i!==(i=X(t).value)&&(n.value=(n.__value=X(t).value)??``)}),_r(e,n)}),A(u),A(l);var d=Ut(l,2),f=Ut(q(d),2),p=q(f);kr(p,17,()=>X(n).filter(e=>e.startsWith(`0k-site/`)).map(e=>e.slice(8)),Tr,(e,t)=>{var n=Ml(),i=q(n);A(n),un(()=>vr(i,`${X(t)??``}.0k ×`)),or(`click`,n,()=>caches.delete(`0k-site/${X(t)}`).finally(r)),_r(e,n)});var m=Ut(p,2);A(f),A(d),A(c),Fr(c,()=>e=>e.showModal());var h=Ut(c,2),g=e=>{Al(e,{close:()=>{G(i,!1),r()}})};wr(h,e=>{X(i)&&e(g)}),ar(`toggle`,c,e=>{e.newState==`closed`&&t.close()}),Kr(u,()=>a(),e=>o(e)),or(`click`,m,()=>G(i,!0)),_r(e,s),Ie()}sr([`click`]);var Fl=mr(`<!> <!> <!> <!>`,1);function Il(e,t){Fe(t,!0);let n=W(``),r=H(Pa),i=W(!1),a=wi();var o=Fl();ar(`message`,Ft,e=>{e.data==`opensettings`&&G(i,!0)});var s=Ht(o);Ia(s,{urlchange:e=>G(n,e,!0)});var c=Ut(s,2),l=e=>{oa(e,{})};wr(c,e=>{a.promptOpen&&e(l)});var u=Ut(c,2),d=e=>{hi(e,{get url(){return X(n)},get go(){return X(r)}})};wr(u,e=>{X(r)&&e(d)});var f=Ut(u,2),p=e=>{Pl(e,{close:()=>G(i,!1)})};wr(f,e=>{X(i)&&e(p)}),_r(e,o),Ie()}var Ll=document.body??document.getElementsByTagName(`body`)[0];if(!Ll)throw Error(`0K mount target missing`);yr(Il,{target:Ll});
+</html>`},o=W(void 0),s=H(()=>X(o)?.item(0)),c=W(`site`);rn(()=>{X(s)&&G(c,X(s).name.toLowerCase().replace(`.zip`,``).replace(/[^a-z-]/g,``),!0)});let l=async()=>{let e=new sl(new rc(X(s)),{useWebWorkers:!1});try{let t=(await e.getEntries()).filter(e=>!e.directory),n=t.map(e=>e.filename),r=``;if(n.length>0){r=n[0];for(let e=1;e<n.length;e++)for(;r&&n[e].indexOf(r)!=0;)r=r.slice(0,-1)}let o=await caches.open(`0k-site/${X(c)}`),s=[],l=new Set;for(let e of t){let t=`/`+e.filename.slice(r.length).replace(`index.html`,``).replace(`.html`,``),n=new URL(t,`https://${X(c)}.0k`),i=Ca(e.filename),a=await e.getData(new ic(i));if(await o.put(n,new Response(a,{headers:{"content-type":i}})),i==Sa){s.push(n);let e=new URL(`.`,n);for(;l.add(e.href),e.pathname!=`/`;)e=new URL(`..`,e)}}for(let e of l){if(await o.match(e))continue;let t=new URL(e),n=i(t,s);n.length!=0&&await o.put(t,new Response(a(X(c),t,n),{headers:{"content-type":Sa}}))}}finally{await e.close()}};var u=kl(),d=q(u),f=e=>{var n=Dl(),r=q(n);Qr(r);var i=Ut(r,3);Ur(i,``,{},{width:`4rem`});var a=Ut(i,2);A(n),ii(r,()=>X(c),e=>G(c,e)),or(`click`,a,()=>l().then(t.close)),_r(e,n)},p=e=>{var t=Ol(),n=Ut(q(t));A(t),si(n,()=>X(o),e=>G(o,e)),_r(e,t)};wr(d,e=>{X(s)?e(f):e(p,-1)}),A(u),Fr(u,()=>e=>e.showModal()),ar(`toggle`,u,e=>{e.newState==`closed`&&t.close()}),_r(e,u),Ie()}sr([`click`]);var jl=mr(`<option> </option>`),Ml=mr(`<button class="chip svelte-mrn94a"> </button>`),Nl=mr(`<dialog closedby="any" class="svelte-mrn94a"><label class="split svelte-mrn94a"><p>Reroute <code>github.io</code></p> <select class="svelte-mrn94a"></select></label> <div class="split svelte-mrn94a"><p>Local sites</p> <div class="chips svelte-mrn94a"><!> <button class="chip svelte-mrn94a">+</button></div></div></dialog> <!>`,1);function Pl(e,t){Fe(t,!0);let n=W(Mt([])),r=()=>caches.keys().then(e=>G(n,e,!0));r();let i=W(!1),a=()=>ha(localStorage[Oa],`statically`),o=e=>{localStorage[Oa]=ha(e,`statically`)};var s=Nl(),c=Ht(s),l=q(c),u=Ut(q(l),2);kr(u,21,()=>ma,Tr,(e,t)=>{var n=jl(),r=q(n,!0);A(n);var i={};un(()=>{vr(r,X(t).label),i!==(i=X(t).value)&&(n.value=(n.__value=X(t).value)??``)}),_r(e,n)}),A(u),A(l);var d=Ut(l,2),f=Ut(q(d),2),p=q(f);kr(p,17,()=>X(n).filter(e=>e.startsWith(`0k-site/`)).map(e=>e.slice(8)),Tr,(e,t)=>{var n=Ml(),i=q(n);A(n),un(()=>vr(i,`${X(t)??``}.0k ×`)),or(`click`,n,()=>caches.delete(`0k-site/${X(t)}`).finally(r)),_r(e,n)});var m=Ut(p,2);A(f),A(d),A(c),Fr(c,()=>e=>e.showModal());var h=Ut(c,2),g=e=>{Al(e,{close:()=>{G(i,!1),r()}})};wr(h,e=>{X(i)&&e(g)}),ar(`toggle`,c,e=>{e.newState==`closed`&&t.close()}),Kr(u,()=>a(),e=>o(e)),or(`click`,m,()=>G(i,!0)),_r(e,s),Ie()}sr([`click`]);var Fl=mr(`<!> <!> <!> <!>`,1);function Il(e,t){Fe(t,!0);let n=W(``),r=H(Pa),i=W(!1),a=wi();var o=Fl();ar(`message`,Ft,e=>{e.data==`opensettings`&&G(i,!0)});var s=Ht(o);Ia(s,{urlchange:e=>G(n,e,!0)});var c=Ut(s,2),l=e=>{oa(e,{})};wr(c,e=>{a.promptOpen&&e(l)});var u=Ut(c,2),d=e=>{hi(e,{get url(){return X(n)},get go(){return X(r)}})};wr(u,e=>{X(r)&&e(d)});var f=Ut(u,2),p=e=>{Pl(e,{close:()=>G(i,!1)})};wr(f,e=>{X(i)&&e(p)}),_r(e,o),Ie()}var Ll=document.body??document.getElementsByTagName(`body`)[0];if(!Ll)throw Error(`0K mount target missing`);yr(Il,{target:Ll});
 });
 //]]></script>
     <style>/*<![CDATA[*/
